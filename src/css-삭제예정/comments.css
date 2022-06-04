@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#canvas > div {
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+
+  border: solid 1px #999;
+  background: #eee;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 10px;
+  padding: 0;
+}
+
+.toolbar {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+}
+
+.toolbar .entry {
+  background: #eee;
+  border: solid 1px #999;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 20px;
+
+  display: inline-block;
+}

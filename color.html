@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+    <style type="text/css">
+      html,
+      body,
+      #canvas {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+
+      /* Option 1: Color via Overlay */
+      .highlight-overlay {
+        background-color: green; /* color elements as green */
+        opacity: 0.4;
+        pointer-events: none; /* no pointer events, allows clicking through onto the element */
+      }
+
+      /* Option 3: Color via Marker + CSS Styling */
+      .highlight:not(.djs-connection) .djs-visual > :nth-child(1) {
+        fill: green !important; /* color elements as green */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="properties-panel-parent"></div>
+
+    <script src="src/color.js"></script>
+  </body>
+</html>

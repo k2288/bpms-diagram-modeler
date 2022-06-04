@@ -1,0 +1,122 @@
+[
+  {
+    "name": "CommonMultiSaveTask",
+    "id": "com.dkunc.oasis.task.commonDbTask.CommonMultiSaveTask",
+    "appliesTo": ["bpmn:Task"],
+    "properties": [
+      {
+        "label": "Type",
+        "type": "String",
+        "value": "com.dkunc.oasis.task.commonDbTask.CommonMultiSaveTask",
+        "editable": false,
+        "binding": {
+          "name": "class",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "dao (null = defaultServiceDao)",
+        "type": "String",
+        "value": "",
+        "binding": {
+          "name": "dao",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "saveMode",
+        "type": "Dropdown",
+        "value": "one",
+        "editable": true,
+        "choices": [
+          { "name": "one", "value": "one" },
+          { "name": "belowOne", "value": "belowOne" }
+        ],
+        "binding": {
+          "name": "saveMode",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "insertSqlKey",
+        "type": "String",
+        "value": "#{serviceId}Mapper.insert",
+        "binding": { "name": "insertSqlKey", "type": "camunda:property" }
+      },
+      {
+        "label": "updateSqlKey",
+        "type": "String",
+        "value": "#{serviceId}Mapper.update",
+        "binding": { "name": "updateSqlKey", "type": "camunda:property" }
+      },
+      {
+        "label": "deleteSqlKey",
+        "type": "String",
+        "value": "#{serviceId}Mapper.delete",
+        "binding": { "name": "deleteSqlKey", "type": "camunda:property" }
+      },
+      {
+        "label": "paramKey",
+        "type": "String",
+        "value": "inputDS",
+        "binding": {
+          "name": "paramKey",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "resultKey",
+        "type": "String",
+        "value": "resultDS",
+        "binding": { "name": "resultKey", "type": "camunda:property" },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "resultKey를 화면으로 전달할까요?",
+        "type": "Boolean",
+        "value": true,
+        "binding": {
+          "name": "isServiceResult",
+          "type": "camunda:property"
+        }
+      },
+      {
+        "label": "전처리 Spel",
+        "type": "Text",
+        "value": "",
+        "description": "전처리 Spel을 입력하세요.\n 예) ['i'] = 10",
+        "binding": {
+          "name": "beforeSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "후처리 Spel",
+        "type": "Text",
+        "value": "",
+        "description": "후처리 Spel을 입력하세요.",
+        "binding": {
+          "name": "afterSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "분기 Spel",
+        "type": "String",
+        "value": "",
+        "description": "선택된 값으로 분기 예) ['j'] <= 9? 'loop' : 'end' 또는 ['action']",
+        "binding": {
+          "name": "nextBranchSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      }
+    ]
+  }
+]

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Glue:GlueDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Glue="http://www.glueframework.com/activitydiagram/" id="0" location="20,20" size="100,100">
+  <child xsi:type="Glue:InitialState" id="0" location="376,6" size="-1,-1" output="//@wire.33"/>
+  <child xsi:type="Glue:FinalState" id="1" location="384,780" size="-1,-1" input="//@wire.32 //@wire.30 //@wire.15 //@wire.31 //@wire.11 //@wire.10 //@wire.7 //@wire.6 //@wire.3 //@wire.0 //@wire.37 //@wire.52 //@wire.55 //@wire.59 //@wire.64 //@wire.67 //@wire.69 //@wire.71 //@wire.76"/>
+  <child xsi:type="Glue:RouterActivity" id="2" location="68,82" size="605,-1" input="//@wire.33" output="//@wire.1 //@wire.2 //@wire.4 //@wire.5 //@wire.8 //@wire.9 //@wire.12 //@wire.13 //@wire.14 //@wire.16 //@wire.17 //@wire.19 //@wire.28 //@wire.35 //@wire.36 //@wire.51 //@wire.58 //@wire.60 //@wire.65 //@wire.66 //@wire.68 //@wire.70 //@wire.77" name="이벤트 분기1">
+    <property key="class" value="com.posdata.glue.biz.activity.PosDefaultRouter"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 Event에 따라서 분기하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;&#xD;&#xA;3. Reference&#xD;&#xA;"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="5" location="192,144" size="162,-1" input="//@wire.1" output="//@wire.0" name="주문정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_O.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 코일ID로 주문정보를 조회한다.&#xD;&#xA;- 항목 : 화면입출력정의서_M472020010tab01_검사실적_주문정보조회.xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="16" location="192,205" size="162,-1" input="//@wire.2" output="//@wire.3" name="품질정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_Q.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 코일ID로 품질정보를 조회한다.&#xD;&#xA;- 항목 : 화면입출력정의서_M472020010tab02_검사실적_품질설계정보조회.xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="3928" location="192,264" size="162,-1" input="//@wire.4" output="//@wire.6" name="화면로딩시지시정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_2.select1"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드로 작업지시정보를 조회한다.&#xD;&#xA;- 항목 : 아래의 문서를 참조한다.&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(PLTCM~CGL).xls&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(CCL~RS).xls&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="3929" location="190,305" size="162,-1" input="//@wire.5" output="//@wire.7" name="외주임가공 지시정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_2.select2"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드로 작업지시정보를 조회한다.&#xD;&#xA;- 항목 : 화면입출력정의서_M472020012_검사실적Main(위탁임가공).xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="3931" location="192,444" size="162,-1" input="//@wire.8" output="//@wire.10" name="코일의 실적정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_3.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 모코일ID로 실적정보를 조회한다.&#xD;&#xA;- 항목 : 아래의 문서를 참조한다.&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(PLTCM~CGL).xls&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(CCL~RS).xls&#xD;&#xA;    * 화면입출력정의서_M472020012_검사실적Main(위탁임가공).xls&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="3932" location="195,491" size="162,-1" input="//@wire.9" output="//@wire.11" name="부적합정보조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_4.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 코일ID로 부적합정보를 조회한다.&#xD;&#xA;- 항목 : 아래의 문서를 참조한다.&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(PLTCM~CGL).xls&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(CCL~RS).xls&#xD;&#xA;    * 화면입출력정의서_M472020012_검사실적Main(위탁임가공).xls&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="3933" location="456,205" size="162,-1" input="//@wire.21 //@wire.24" output="//@wire.20 //@wire.23" name="Grid Row >> Ctx변환">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47DhtmlGridColumnChange"/>
+    <property key="isCtxBackUp" value="true"/>
+    <property key="isCtxBackUpKey" value="isCtxBackUpKey1"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Grid의 Column명을 변환하여 ctx에 저장하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 화면의 Grid Row정보들을 1건씩 추출하여 ctx에 저장후 Roop를 돌려준다.&#xD;&#xA;- 항목 : 화면의 Grid의 Column에 해당하는 항목들&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:FinalState" id="3934" location="1071,230" size="-1,-1" input="//@wire.34 //@wire.62"/>
+  <child xsi:type="Glue:SubServiceActivity" id="3949" location="480,264" size="138,-1" input="//@wire.23" output="//@wire.24" name="검사실적">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="M47CoilInsAct-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : M47CoilInsAct 를 호출한다.&#xD;&#xA;- 항목 : 검사실적을 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="3950" location="192,564" size="162,-1" input="//@wire.13" output="//@wire.31" name="요구차공정마스터조회">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47CustomLov"/>
+    <property key="dao" value="mesdao"/>
+    <property key="isBlank" value="true"/>
+    <property key="sqlkey" value="M472020010_reqNxtProcCdLov.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 Combo 데이터를 임의의 쿼리의 정보로 만들어주는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;화면의 요구차공정 Lov정보를 생성한다.&#xD;&#xA;- 마스터코드 : VI_M00_CODE_ACCESS(REQ_NXT_PROC_CD)&#xD;&#xA;- 업무기준 : VI_M00_M47A0002&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="4009" location="192,624" size="162,-1" input="//@wire.14" output="//@wire.15" name="작업종료일시 Max 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_3_Max.select"/>
+    <property key="description" value=" 1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 제품실적공통을 공정코드로 조회하여 해당 공정의 작업종료일시 Max시간을 가져온다.&#xD;&#xA;- 항목 : 작업종료일시&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="4081" location="876,205" size="162,-1" input="//@wire.17" output="//@wire.38" name="기준정보에 필요한 정보 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Calc.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 코일ID로 계산식에 필요한 항목값들을 조회한다.&#xD;&#xA;- 항목 : &#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="4082" location="876,264" size="162,-1" input="//@wire.38" output="//@wire.34" name="길이,중량 계산">
+    <property key="class" value="com.unionsteel.mes.m47.activity.ui.M47CoilInsActCoilCal"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 입력항목 값을 이용하여 중량값을 산정하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 계산식윽 통하여 미리 중량항목값들의 예상값을 보여준다.&#xD;&#xA;- 항목 : 코일내경링중량, 보호필름중량, 코일내경링중량, 코일중량 항목을 계산한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:RouterActivity" id="147776" location="456,144" size="162,-1" input="//@wire.12 //@wire.16 //@wire.35 //@wire.72" output="//@wire.18 //@wire.21" name="InLineShear공정분기">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.PosValueRouter"/>
+    <property key="param-count" value="2"/>
+    <property key="param0" value="P_IN_LN_SHR_WK_YN|Y|Y"/>
+    <property key="param1" value="P_IN_LN_SHR_WK_YN|#all|N"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 특정값으로 분기하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : InLineShear여부를 판단하여 분기한다. &#xD;&#xA;- 항목 : P_IN_LN_SHR_WK_YN 판단변수&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="147777" location="455,498" size="162,-1" input="//@wire.49" output="//@wire.50" name="관련전문들 전송">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.msg.PosSendMessage"/>
+    <property key="if-size-zero" value="skip"/>
+    <property key="message-id" value="B42R0002,MES|B77R0018,MES|B20R2010,MES|B20R2020,MES|B47S1P18,LV2|B47S8304,LV2|B47S8406,LV2|B47S8504,LV2|B47S6505,LV2|B47S7605,LV2|B47SA406,LV2|B47SA520,LV2|B47S6620,LV2|B47SA606,LV2|B47SA706,LV2|B47S6755,LV2|B47S6855,LV2|B60R0016,MES|B60R0006,MES|B47R1001,MES"/>
+    <property key="tx-name" value="tx1"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 생성된 전문을 송신하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;아래의 전문들을 송신한다.&#xD;&#xA;- TC > B17R2010 (부산_생산관제_수신_재료진행실적정보)&#xD;&#xA;- TC > B77R0016 (부산_야드관리_수신_REJECT 요구정보 수신)&#xD;&#xA;- TC > B42R0009 (부산_원자재관리_수신_입측REJECT)&#xD;&#xA;- TC > B20R2010 (부산_품질판정_수신_재질 시편채취실적 수신)&#xD;&#xA;- TC > B20R2010 (부산_품질판정_수신_외관 판정결과 수신)&#xD;&#xA;- TC > B47S1P18 (부산_조업관리_송신_L2검사실적 송신(PLTCM))&#xD;&#xA;- TC > B47S8304 (부산_조업관리_송신_L2검사실적 송신(3CGL))&#xD;&#xA;- TC > B47S8406 (부산_조업관리_송신_L2검사실적 송신(4CGL))&#xD;&#xA;- TC > B47S8504 (부산_조업관리_송신_L2검사실적 송신(5CGL))&#xD;&#xA;- TC > B47S6505 (부산_조업관리_송신_L2검사실적 송신(4SHL))&#xD;&#xA;- TC > B47S7605 (부산_조업관리_송신_L2검사실적 송신(4RS))&#xD;&#xA;- TC > B47SA406 (부산_조업관리_송신_L2검사실적 송신(4CCL))&#xD;&#xA;- TC > B47SA520 (부산_조업관리_송신_L2검사실적 송신(5CCL))&#xD;&#xA;- TC > B47S6620 (부산_조업관리_송신_L2검사실적 송신(5SHL))&#xD;&#xA;- TC > B47SA606 (부산_조업관리_송신_L2검사실적 송신(6CCL))&#xD;&#xA;- TC > B47SA706 (부산_조업관리_송신_L2검사실적 송신(7CCL))&#xD;&#xA;- TC > B47S6755 (부산_조업관리_송신_L2검사실적 송신(6SHL))&#xD;&#xA;- TC > B47S6855 (부산_조업관리_송신_L2검사실적 송신(7SHL))&#xD;&#xA;- TC > B60R0016 (위탁임가공 입고대상정보수신(조업))&#xD;&#xA;- TC > B47R1001 (부산_조업관리_수신_작업지시수신)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SubServiceActivity" id="147778" location="888,504" size="162,-1" input="//@wire.41" output="//@wire.42" name="CCL검사실적">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="M47CoilInsAct-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : M47CoilInsAct 를 호출한다.&#xD;&#xA;- 항목 : 검사실적을 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SubServiceActivity" id="147779" location="888,624" size="162,-1" input="//@wire.43" output="//@wire.25" name="SHL검사실적">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="M47CoilInsAct-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : M47CoilInsAct 를 호출한다.&#xD;&#xA;- 항목 : 검사실적을 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="147780" location="888,444" size="162,-1" input="//@wire.40" output="//@wire.41" name="CCL정보편집">
+    <property key="class" value="com.unionsteel.mes.m47.activity.ui.M472020010CCLDataEdit"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 CCL검사실적이 변경가능한 상태로 데이터를 변환하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;-. SHL정보를 Backup후 CTX에서 삭제.&#xD;&#xA;-. CCL 검사실적 변경가능상태로 변경 (내경, 진도.. 등.)&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="147781" location="888,564" size="162,-1" input="//@wire.42" output="//@wire.27 //@wire.43" name="SHL정보편집">
+    <property key="class" value="com.unionsteel.mes.m47.activity.ui.M472020010SHLDataEdit"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 SHL검사실적이 변경가능한 상태로 데이터를 변환하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA; -. Back해둔 정보를 ctx로 이동.&#xD;&#xA; -. 지시정보를 Copy&#xD;&#xA; -. SHL실적이 처리가능하도록 코일의 정보를 변경&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SubServiceActivity" id="147887" location="708,323" size="126,-1" input="//@wire.44" output="//@wire.45" name="ERP실적취소">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="B47S3004-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : B47S3004 를 호출한다.&#xD;&#xA;- 항목 : ERP생산실적을 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="147891" location="708,264" size="126,-1" input="//@wire.46" output="//@wire.44" name="ERP실적취소 변수등록">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47InsertAttrsIntoCtxActivity"/>
+    <property key="B47S3004" value="InLineShearC"/>
+    <property key="ERP_PCOIL_ID" value="@PCOIL_ID"/>
+    <property key="item-key" value="B47S3004&amp;ERP_PCOIL_ID"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 PosContext에 Atttribute를 추가하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA; - ERP_PCOIL_ID : 모코일ID&#xD;&#xA; - B47S3004 :  ERP실적처리Module에서 분기하기위한 인자값&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="147989" location="456,443" size="162,-1" input="//@wire.22 //@wire.26" output="//@wire.49" name="전문을 생성">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47SetCreateMessage"/>
+    <property key="bind-result" value="RK_B42R0002,RK_B77R0018,RK_B20R2010,RK_B20R2020,RK_B60R0016,RK_level2,RK_B60R0006,RK_B47R1001"/>
+    <property key="dao" value="mesdao"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 조회결과로 전문을 생성하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;내부적으로 공통 com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetCreateMessage 을 호출한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SubServiceActivity" id="147991" location="456,324" size="162,-1" input="//@wire.20" output="//@wire.22" name="완료정보처리">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="M47CoilInsActC-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : M47CoilInsActC 를 호출한다.&#xD;&#xA;- 항목 : 검사실적완료 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="148402" location="672,383" size="162,-1" input="//@wire.25 //@wire.27 //@wire.45 //@wire.47" output="//@wire.39 //@wire.48" name="Grid Row >> Ctx변환(InLine)">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47DhtmlGridColumnChange"/>
+    <property key="isCtxBackUp" value="true"/>
+    <property key="isCtxBackUpKey" value="isCtxBackUpKey2"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Grid의 Column명을 변환하여 ctx에 저장하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 화면의 Grid Row정보들을 1건씩 추출하여 ctx에 저장후 Roop를 돌려준다.&#xD;&#xA;- 항목 : 화면의 Grid의 Column에 해당하는 항목들&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SubServiceActivity" id="148403" location="672,443" size="162,-1" input="//@wire.48" output="//@wire.26" name="완료정보처리(InLine)">
+    <property key="class" value="com.posdata.glue.biz.activity.PosSubBizControlActivity"/>
+    <property key="new-transacion" value="false"/>
+    <property key="ServiceName" value="M47CoilInsActC-service"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sub-Activity을 호출하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : M47CoilInsAct 를 호출한다.&#xD;&#xA;- 항목 : 검사실적을 처리하는 공통Module&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="167249" location="192,684" size="162,-1" input="//@wire.28" output="//@wire.29" name="신규코일ID 필요정보 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_NCoilID.select"/>
+    <property key="description" value=" 1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 신규코일ID조회에 필요한 정보를 조회한다.&#xD;&#xA;- 항목 : FromMO번호, ToMO번호, 코일이력발생일시, 코일이력발생위치구분, 전환사유코드&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="167250" location="192,744" size="162,-1" input="//@wire.29" output="//@wire.30" name="신규코일ID조회">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47CoilIdCreateActivity"/>
+    <property key="bind-result" value="xml-result"/>
+    <property key="resultkey" value="xml-result.COIL_ID_N"/>
+    <property key="isSearch" value="Y"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 새로운코일번호를 부여받는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;&lt;property key=&quot;class&quot; value=&quot;com.unionsteel.mes.m47.activity.common.M47CoilIdCreateActivity&quot;/>&#xD;&#xA;&lt;property key=&quot;dao&quot; value=&quot;mesdao&quot;/>&#xD;&#xA;&lt;property key=&quot;resultkey&quot; value=&quot;NCOIL_ID&quot;/>&#xD;&#xA;&lt;property key=&quot;bind-result&quot; value=&quot;RK_COIL_ENT_PTL&quot;/>&#xD;&#xA;&#xD;&#xA;- dao : applicationContext.xml의 DAO id (Default : mesdao)&#xD;&#xA;- yyyy(년), MM(월), dd(일)의 값이 없을 경우 yyyyMMdd의 값을 사용하며 yyyyMMdd값도 없을 시 현재 날자를 사용한다.&#xD;&#xA;- PROC_CD : 공정코드로 없으면 Error가 발생한다.&#xD;&#xA;- resultkey : 새로운 코일번호를 저장할 Key에 해당한다. (Default : NCOIL_ID)&#xD;&#xA;&#xD;&#xA;필요한 항목&#xD;&#xA;필수값 : bind-result&#xD;&#xA;&#xD;&#xA;SELECT COIL_ID             -- 코일ID&#xD;&#xA;     , FAC_CD              -- 공장코드&#xD;&#xA;     , FR_MO_NO            -- FromMO번호&#xD;&#xA;     , TO_MO_NO            -- ToMO번호&#xD;&#xA;     , COIL_HST_OCC_DH     -- 코일이력발생일시&#xD;&#xA;     , COIL_HST_OCC_LOC_TP -- 코일이력발생위치구분&#xD;&#xA;     , CVT_RSN_CD&#x9;       -- 전환사유코드&#xD;&#xA;     , PROC_CD             -- 공정코드&#xD;&#xA;     , yyyy                -- 년&#xD;&#xA;     , MM                  -- 월&#xD;&#xA;     , dd                  -- 일&#xD;&#xA;     , yyyyMMdd            -- 년월일&#xD;&#xA;   FROM DUAL&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="203557" location="455,548" size="162,-1" input="//@wire.50" output="//@wire.32" name="Log_SND">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.msg.LogSendMessage"/>
+    <property key="dao" value="m90dao"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;  - 전문 메시지를 Write 하기 위한 Activity 이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;  - 전문 메시지를 Write 한다."/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="213009" location="191,410" size="162,-1" input="//@wire.36" output="//@wire.37" name="Order변경 체크정보 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_DataCheck.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 주문번호, 주문행번, 품질설계제조구분&#xD;&#xA;- 항목 : 아래의 문서를 참조한다.&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(PLTCM~CGL).xls&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(CCL~RS).xls&#xD;&#xA;    * 화면입출력정의서_M472020012_검사실적Main(위탁임가공).xls&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="219203" location="888,384" size="162,-1" input="//@wire.39" output="//@wire.40" name="ControlFlow의 값 초기화">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47InsertAttrsIntoCtxActivity"/>
+    <property key="ControlFlow" value="NULL"/>
+    <property key="item-key" value="ControlFlow"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Context에 항목값을 추가하는 체인공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 여러번 반복수행시 초기화를 해야지만이 정확한 분기를 할수있다.&#xD;&#xA;- 항목 : ControlFlow의 값을 Null로 초기화 (NULL문자)&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:RouterActivity" id="219877" location="672,205" size="162,-1" input="//@wire.18" output="//@wire.46 //@wire.47" name="완료처리분기">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.PosValueRouter"/>
+    <property key="param-count" value="2"/>
+    <property key="param0" value="complete|1|complete"/>
+    <property key="param1" value="success|#all|success"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 특정값으로 분기하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 완료여부를 판단 (complete가 1일경우 완료 로직을 수행하며 그외는 종료처리된다.)&#xD;&#xA;- 항목 : complete 판단변수&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220015" location="192,804" size="162,-1" input="//@wire.51" output="//@wire.52 //@wire.53" name="계획공정정보 조회">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47FormSearchActivity"/>
+    <property key="dao" value="mesdao"/>
+    <property key="resultkey" value="xml-result"/>
+    <property key="size-is-zero" value="nodata"/>
+    <property key="sqlkey" value="M472020010_NewPlnProc.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 입력 Param으로 조회하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적: 복수오더일때 변경MO의 계획공정에 Sht가 존재할경우 그 정보를 조회한다."/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220103" location="192,924" size="162,-1" input="//@wire.54" output="//@wire.56" name="작업지시공통 생성">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetInsert"/>
+    <property key="bind-result" value="xml-result"/>
+    <property key="dao" value="mesdao"/>
+    <property key="isAudit" value="true"/>
+    <property key="sqlkey" value="M472020010_InLineShlWrkInst.insert"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 기 조회된 결과를 등록하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 기 조회된 CCL의 정보를 바탕으로 SHL의 지시를 생성한다.&#xD;&#xA;- 항목 : UseCaseSpec_M472020010_검사실적Main(PLTCM~CGL).xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220104" location="192,864" size="162,-1" input="//@wire.53" output="//@wire.54" name="관제지시순위 생성">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetInsert"/>
+    <property key="bind-result" value="xml-result"/>
+    <property key="dao" value="mesdao"/>
+    <property key="isAudit" value="true"/>
+    <property key="sqlkey" value="M472020010_InLineShlInstSeq.insert"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 기 조회된 결과를 등록하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 기 조회된 CCL의 정보를 바탕으로 SHL의 지시를 생성한다.&#xD;&#xA;- 항목 : UseCaseSpec_M472020010_검사실적Main(PLTCM~CGL).xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220145" location="192,984" size="162,-1" input="//@wire.56" output="//@wire.57" name="InLIne지시구분 Y설정(관제)">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetUpdate"/>
+    <property key="bind-result" value="xml-result"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_InLnShrWkYn.update1"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 기 조회된 결과를 수정하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 관제지시순위의 InLine작업지시구분을 Y로 설정한다.&#xD;&#xA;- 항목 : UseCaseSpec_M472020010_검사실적Main(PLTCM~CGL).xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220146" location="192,1044" size="162,-1" input="//@wire.57" output="//@wire.55" name="InLIne지시구분 Y설정(조업)">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetUpdate"/>
+    <property key="bind-result" value="xml-result"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_InLnShrWkYn.update2"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 기 조회된 결과를 수정하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 관제지시순위의 InLine작업지시구분을 Y로 설정한다.&#xD;&#xA;- 항목 : UseCaseSpec_M472020010_검사실적Main(PLTCM~CGL).xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="220253" location="192,1104" size="162,-1" input="//@wire.58" output="//@wire.59" name="계획공정정보 조회2">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47FormSearchActivity"/>
+    <property key="dao" value="mesdao"/>
+    <property key="resultkey" value="xml-result"/>
+    <property key="size-is-zero" value="success"/>
+    <property key="sqlkey" value="M472020010_NewPlnProc.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 입력 Param으로 조회하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적: 복수오더일때 변경MO의 계획공정에 Sht가 존재할경우 그 정보를 조회한다."/>
+  </child>
+  <child xsi:type="Glue:Activity" id="225130" location="1134,116" size="220,-1" input="//@wire.60 //@wire.63" output="//@wire.61 //@wire.62" name="Grid Row >> Ctx변환(Inline Grs중량)">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47DhtmlGridColumnChange"/>
+    <property key="description" value=""/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="225132" location="1138,166" size="213,-1" input="//@wire.61" output="//@wire.63" name="Gross중량 Update(코일공통)">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormUpdate"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_GrsWgt.update"/>
+    <property key="description" value=""/>
+  </child>
+  <child xsi:type="Glue:Activity" id="225718" location="198,1147" size="155,-1" input="//@wire.65" output="//@wire.64" name="등급다운소분류코드조회">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47CustomLov"/>
+    <property key="dao" value="mesdao"/>
+    <property key="isBlank" value="true"/>
+    <property key="sqlkey" value="M472020010_GrdDwnCau2Cd.select"/>
+    <property key="description" value=""/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="232036" location="192,530" size="162,-1" input="//@wire.66" output="//@wire.67" name="부적합코드 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Form_6.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 모코일ID로 실적정보를 조회한다.&#xD;&#xA;- 항목 : 아래의 문서를 참조한다.&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(PLTCM~CGL).xls&#xD;&#xA;    * 화면입출력정의서_M472020010_검사실적Main(CCL~RS).xls&#xD;&#xA;    * 화면입출력정의서_M472020012_검사실적Main(위탁임가공).xls&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:SearchActivity" id="232406" location="190,349" size="162,-1" input="//@wire.68" output="//@wire.69" name="반품공정 지시정보">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_Grid_2.select3"/>
+    <property key="description" value=""/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="232407" location="195,1195" size="162,-1" input="//@wire.70" output="//@wire.71" name="신뢰성 시험 샘플 시편채취 안내메시지 표시여부 조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010_trust_test_sample.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 공정코드, 코일ID로 주문정보를 조회한다.&#xD;&#xA;- 항목 : 화면입출력정의서_M472020010tab01_검사실적_주문정보조회.xls를 참조한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="276498" location="710,124" size="205,-1" input="//@wire.19" output="//@wire.72" name="모코일락잡기">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="resultkey" value="RK_COIL_CMN_LOCK"/>
+    <property key="sqlkey" value="M472020010_PCoilCmnLock.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;- 목적 : 중량계근실적과 동시처리문제로 인하여 진도가 G3>G2로 역행이 발생하여 자코일정보에 LOCK을 잡고 프로그램을 시작하여 동시처리문제를 해소.&#xD;&#xA;- 항목 : &#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:ModifyActivity" id="277101" location="1347,557" size="166,-1" input="//@wire.79" output="//@wire.76" name="TAG재발행">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.rowset.PosRowSetUpdate"/>
+    <property key="bind-result" value="LABEL_ID"/>
+    <property key="dao" value="m90dao"/>
+    <property key="sqlkey" value="M472020010_tagPub.update"/>
+    <property key="description" value=""/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="277301" location="1326,429" size="205,-1" input="//@wire.80" output="//@wire.79" name="LABEL_ID 찾기">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="m90dao"/>
+    <property key="resultkey" value="LABEL_ID"/>
+    <property key="sqlkey" value="M472020010_tagPub.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 출측 반제품 TAG 1장을 발행하기 위한 최근 LABEL_ID를 select하는 Activity이다"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="277302" location="1346,348" size="151,-1" input="//@wire.77" output="//@wire.80" name="Grid내의 값을 ctx로 추출">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47DhtmlGridColumnChange"/>
+    <property key="description" value=""/>
+  </child>
+  <property key="tx1" value="true"/>
+  <property key="tx3" value="true"/>
+  <property key="tx4" value="true"/>
+  <property key="description" value="1. Service Definition&#xD;&#xA;&#xD;&#xA;&#x9;- 이 서비스는 검사실적화면의 정보를 조회, 등록, 수정, 취소 처리한다&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;&#xD;&#xA;&#x9;- 신규코일을 등록하거나 조회하여 정보를 수정하거나 완료처리할 수 있다.&#xD;&#xA;"/>
+  <wire id="2" guardcondition="success" firstRelativePoint="354,162" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,3" secondDimension="2,-628"/>
+  </wire>
+  <wire id="6" guardcondition="findO" firstRelativePoint="177,112" lastRelativePoint="196,149">
+    <bendpoint weight="0.5" firstDimension="-204,52" secondDimension="-96,-10"/>
+  </wire>
+  <wire id="7" guardcondition="findQ" firstRelativePoint="160,112" lastRelativePoint="194,215">
+    <bendpoint weight="0.5" firstDimension="-221,118" secondDimension="-113,8"/>
+  </wire>
+  <wire id="8" guardcondition="success" firstRelativePoint="354,218" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,-2" secondDimension="2,-572"/>
+  </wire>
+  <wire id="867" guardcondition="findI1" firstRelativePoint="154,112" lastRelativePoint="193,273">
+    <bendpoint weight="0.5" firstDimension="-227,176" secondDimension="-119,6"/>
+  </wire>
+  <wire id="868" guardcondition="findI2" firstRelativePoint="149,112" lastRelativePoint="193,331">
+    <bendpoint weight="0.5" firstDimension="-232,234" secondDimension="-124,4"/>
+  </wire>
+  <wire id="870" guardcondition="success" firstRelativePoint="354,278" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,-1" secondDimension="2,-512"/>
+  </wire>
+  <wire id="871" guardcondition="success" firstRelativePoint="354,339" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,0" secondDimension="2,-451"/>
+  </wire>
+  <wire id="873" guardcondition="findAct" firstRelativePoint="138,112" lastRelativePoint="194,454">
+    <bendpoint weight="0.5" firstDimension="-243,357" secondDimension="-135,7"/>
+  </wire>
+  <wire id="874" guardcondition="findHld" firstRelativePoint="133,112" lastRelativePoint="193,513">
+    <bendpoint weight="0.5" firstDimension="-248,416" secondDimension="-140,6"/>
+  </wire>
+  <wire id="875" guardcondition="success" firstRelativePoint="354,459" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,0" secondDimension="2,-331"/>
+  </wire>
+  <wire id="876" guardcondition="success" firstRelativePoint="354,517" lastRelativePoint="397,779">
+    <bendpoint weight="0.5" firstDimension="124,-2" secondDimension="3,-273"/>
+  </wire>
+  <wire id="879" guardcondition="insert" firstRelativePoint="482,112" lastRelativePoint="482,144"/>
+  <wire id="885" guardcondition="findLov" firstRelativePoint="128,112" lastRelativePoint="193,572">
+    <bendpoint weight="0.5" firstDimension="-253,475" secondDimension="-145,5"/>
+  </wire>
+  <wire id="903" guardcondition="findMax" firstRelativePoint="354,629" lastRelativePoint="407,560">
+    <bendpoint weight="0.5" firstDimension="-258,540" secondDimension="-150,10"/>
+  </wire>
+  <wire id="904" guardcondition="success" firstRelativePoint="354,638" lastRelativePoint="397,796">
+    <bendpoint weight="0.5" firstDimension="124,-1" secondDimension="3,-152"/>
+    <bendpoint weight="0.5" firstDimension="134,2" secondDimension="-1,79"/>
+  </wire>
+  <wire id="972" guardcondition="update" firstRelativePoint="526,112" lastRelativePoint="526,144">
+    <bendpoint weight="0.5" firstDimension="145,38" secondDimension="-11,-24"/>
+  </wire>
+  <wire id="974" guardcondition="findCalc" firstRelativePoint="663,111" lastRelativePoint="1023,205">
+    <bendpoint weight="0.5" firstDimension="643,14" secondDimension="67,-109"/>
+  </wire>
+  <wire id="8781" guardcondition="Y" firstRelativePoint="617,163" lastRelativePoint="817,205">
+    <bendpoint weight="0.5" firstDimension="280,4" secondDimension="64,-57"/>
+  </wire>
+  <wire id="8913" guardcondition="complete" firstRelativePoint="658,112" lastRelativePoint="678,124"/>
+  <wire id="8914" guardcondition="end" firstRelativePoint="471,235" lastRelativePoint="471,324"/>
+  <wire id="8915" guardcondition="N" firstRelativePoint="603,174" lastRelativePoint="603,205"/>
+  <wire id="8919" guardcondition="success" firstRelativePoint="603,354" lastRelativePoint="603,384"/>
+  <wire id="8925" guardcondition="success" firstRelativePoint="603,235" lastRelativePoint="603,264"/>
+  <wire id="8926" guardcondition="success" firstRelativePoint="535,264" lastRelativePoint="535,235"/>
+  <wire id="8931" guardcondition="success" firstRelativePoint="888,578" lastRelativePoint="833,345">
+    <bendpoint weight="0.5" firstDimension="-91,-1" secondDimension="125,239"/>
+    <bendpoint weight="0.5" firstDimension="-91,-234" secondDimension="125,6"/>
+  </wire>
+  <wire id="8933" guardcondition="success" firstRelativePoint="672,460" lastRelativePoint="618,460">
+    <bendpoint weight="0.5" firstDimension="-103,2" secondDimension="113,2"/>
+  </wire>
+  <wire id="8935" guardcondition="end" firstRelativePoint="888,520" lastRelativePoint="833,345">
+    <bendpoint weight="0.5" firstDimension="-90,1" secondDimension="126,181"/>
+    <bendpoint weight="0.5" firstDimension="-90,-174" secondDimension="126,6"/>
+  </wire>
+  <wire id="9272" guardcondition="findNCoilID" firstRelativePoint="117,112" lastRelativePoint="193,695">
+    <bendpoint weight="0.5" firstDimension="-264,598" secondDimension="-156,-4"/>
+  </wire>
+  <wire id="9273" guardcondition="success" firstRelativePoint="339,714" lastRelativePoint="339,744"/>
+  <wire id="9274" guardcondition="success" firstRelativePoint="354,759" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,0" secondDimension="2,-31"/>
+  </wire>
+  <wire id="10236" guardcondition="success" firstRelativePoint="354,577" lastRelativePoint="397,779">
+    <bendpoint weight="0.5" firstDimension="124,-2" secondDimension="3,-213"/>
+  </wire>
+  <wire id="10237" guardcondition="success" firstRelativePoint="601,578" lastRelativePoint="403,789">
+    <bendpoint weight="0.5" firstDimension="65,218" secondDimension="207,-9"/>
+  </wire>
+  <wire id="10301" guardcondition="success" firstRelativePoint="381,25" lastRelativePoint="381,82"/>
+  <wire id="10302" guardcondition="success" firstRelativePoint="1032,291" lastRelativePoint="1081,249">
+    <bendpoint weight="0.5" firstDimension="124,12" secondDimension="0,51"/>
+  </wire>
+  <wire id="10384" guardcondition="delete" firstRelativePoint="583,112" lastRelativePoint="583,144">
+    <bendpoint weight="0.5" firstDimension="202,38" secondDimension="46,-24"/>
+  </wire>
+  <wire id="10515" guardcondition="findDataCheck" firstRelativePoint="143,112" lastRelativePoint="192,398">
+    <bendpoint weight="0.5" firstDimension="-238,301" secondDimension="-130,-1"/>
+  </wire>
+  <wire id="10516" guardcondition="success" firstRelativePoint="353,403" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="123,4" secondDimension="2,-387"/>
+  </wire>
+  <wire id="10608" guardcondition="success" firstRelativePoint="1023,235" lastRelativePoint="1023,264"/>
+  <wire id="10653" guardcondition="success" firstRelativePoint="833,393" lastRelativePoint="889,393"/>
+  <wire id="10654" guardcondition="success" firstRelativePoint="1035,414" lastRelativePoint="1035,444"/>
+  <wire id="10655" guardcondition="success" firstRelativePoint="1035,474" lastRelativePoint="1035,504"/>
+  <wire id="10656" guardcondition="success" firstRelativePoint="1035,534" lastRelativePoint="1035,564"/>
+  <wire id="10657" guardcondition="success" firstRelativePoint="1035,594" lastRelativePoint="1035,624"/>
+  <wire id="10682" guardcondition="success" firstRelativePoint="819,294" lastRelativePoint="819,323"/>
+  <wire id="10683" guardcondition="success" firstRelativePoint="819,353" lastRelativePoint="819,383"/>
+  <wire id="10684" guardcondition="complete" firstRelativePoint="819,235" lastRelativePoint="819,264"/>
+  <wire id="10685" guardcondition="success" firstRelativePoint="687,235" lastRelativePoint="687,383"/>
+  <wire id="10686" guardcondition="end" firstRelativePoint="819,413" lastRelativePoint="819,443"/>
+  <wire id="10687" guardcondition="success" firstRelativePoint="603,473" lastRelativePoint="602,498"/>
+  <wire id="10688" guardcondition="success" firstRelativePoint="602,528" lastRelativePoint="602,548"/>
+  <wire id="10689" guardcondition="insertShl" firstRelativePoint="112,112" lastRelativePoint="192,816">
+    <bendpoint weight="0.5" firstDimension="-269,719" secondDimension="-161,-3"/>
+  </wire>
+  <wire id="10690" guardcondition="nodata" firstRelativePoint="354,820" lastRelativePoint="389,798">
+    <bendpoint weight="0.5" firstDimension="105,1" secondDimension="-16,30"/>
+  </wire>
+  <wire id="10691" guardcondition="success" firstRelativePoint="339,834" lastRelativePoint="339,864"/>
+  <wire id="10692" guardcondition="success" firstRelativePoint="339,894" lastRelativePoint="339,924"/>
+  <wire id="10693" guardcondition="success" firstRelativePoint="354,1056" lastRelativePoint="391,799">
+    <bendpoint weight="0.5" firstDimension="118,-3" secondDimension="-3,266"/>
+  </wire>
+  <wire id="10698" guardcondition="success" firstRelativePoint="339,954" lastRelativePoint="339,984"/>
+  <wire id="10699" guardcondition="success" firstRelativePoint="339,1014" lastRelativePoint="339,1044"/>
+  <wire id="10700" guardcondition="findShl" firstRelativePoint="354,1121" lastRelativePoint="395,799">
+    <bendpoint weight="0.5" firstDimension="-275,1021" secondDimension="-167,-1"/>
+  </wire>
+  <wire id="10701" guardcondition="success" firstRelativePoint="354,1121" lastRelativePoint="395,799">
+    <bendpoint weight="0.5" firstDimension="122,2" secondDimension="1,331"/>
+  </wire>
+  <wire id="10756" guardcondition="update2" firstRelativePoint="667,85" lastRelativePoint="1228,116">
+    <bendpoint weight="0.5" firstDimension="847,-12" secondDimension="-16,-46"/>
+  </wire>
+  <wire id="10757" guardcondition="success" firstRelativePoint="1238,146" lastRelativePoint="1238,166"/>
+  <wire id="10760" guardcondition="end" firstRelativePoint="1343,194" lastRelativePoint="1354,134">
+    <bendpoint weight="0.5" firstDimension="-164,2" secondDimension="-1,-107"/>
+  </wire>
+  <wire id="10761" guardcondition="success" firstRelativePoint="1343,194" lastRelativePoint="1354,134">
+    <bendpoint weight="0.5" firstDimension="147,-4" secondDimension="150,98"/>
+    <bendpoint weight="0.5" firstDimension="147,-47" secondDimension="147,3"/>
+  </wire>
+  <wire id="10838" guardcondition="success" firstRelativePoint="352,1166" lastRelativePoint="393,799">
+    <bendpoint weight="0.5" firstDimension="141,4" secondDimension="22,376"/>
+  </wire>
+  <wire id="10839" guardcondition="findGrdDwnCau1Cd" firstRelativePoint="105,112" lastRelativePoint="198,1163">
+    <bendpoint weight="0.5" firstDimension="-283,1066" secondDimension="-177,1"/>
+  </wire>
+  <wire id="11072" guardcondition="finddef" firstRelativePoint="125,112" lastRelativePoint="192,544">
+    <bendpoint weight="0.5" firstDimension="-245,447" secondDimension="-148,-1"/>
+  </wire>
+  <wire id="11073" guardcondition="success" firstRelativePoint="354,542" lastRelativePoint="397,779">
+    <bendpoint weight="0.5" firstDimension="124,-3" secondDimension="3,-248"/>
+  </wire>
+  <wire id="11096" guardcondition="findI3" firstRelativePoint="86,112" lastRelativePoint="191,359">
+    <bendpoint weight="0.5" firstDimension="-284,262" secondDimension="-185,-5"/>
+  </wire>
+  <wire id="11097" guardcondition="success" firstRelativePoint="350,356" lastRelativePoint="396,779">
+    <bendpoint weight="0.5" firstDimension="125,-8" secondDimension="2,-434"/>
+  </wire>
+  <wire id="11098" guardcondition="findTrustTestSample" firstRelativePoint="83,112" lastRelativePoint="195,1212">
+    <bendpoint weight="0.5" firstDimension="-313,1115" secondDimension="-219,2"/>
+  </wire>
+  <wire id="11099" guardcondition="success" firstRelativePoint="357,1209" lastRelativePoint="394,799">
+    <bendpoint weight="0.5" firstDimension="162,-1" secondDimension="44,419"/>
+  </wire>
+  <wire id="12614" guardcondition="success" firstRelativePoint="647,154" lastRelativePoint="617,154"/>
+  <wire id="12617" guardcondition="success" firstRelativePoint="658,112" lastRelativePoint="1144,290"/>
+  <wire id="12677" guardcondition="success" firstRelativePoint="658,112" lastRelativePoint="1185,386"/>
+  <wire id="12678" guardcondition="success" firstRelativePoint="1183,416" lastRelativePoint="394,779"/>
+  <wire id="12676" guardcondition="success" firstRelativePoint="1441,587" lastRelativePoint="403,789">
+    <bendpoint weight="0.5" firstDimension="11,222" secondDimension="1047,4"/>
+  </wire>
+  <wire id="12675" guardcondition="tagPub" firstRelativePoint="672,93" lastRelativePoint="1437,348">
+    <bendpoint weight="0.5" firstDimension="1067,-4" secondDimension="16,-270"/>
+  </wire>
+  <wire id="12682" guardcondition="success" firstRelativePoint="1439,378" lastRelativePoint="1439,557"/>
+  <wire id="12680" guardcondition="success" firstRelativePoint="1439,459" lastRelativePoint="1439,557"/>
+  <wire id="12681" guardcondition="success" firstRelativePoint="1434,378" lastRelativePoint="1434,429"/>
+</Glue:GlueDiagram>

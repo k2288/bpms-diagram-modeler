@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <!-- <link rel="stylesheet" href="css/model-extension.css" /> -->
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="quality-assurance" class="panel hidden">
+      <form id="form">
+        <p>
+          <b>Suitability Score</b>
+        </p>
+        <br />
+        <input
+          id="suitability-score"
+          type="text"
+          placeholder="100"
+          autocomplete="off"
+        />
+        <br />
+        <br />
+        <p id="warning" class="hidden">
+          Suitability Score must be a number
+        </p>
+        <br />
+        <p>
+          <b>Last Checked</b>
+        </p>
+        <br />
+        <p id="last-checked">
+          -
+        </p>
+        <br />
+        <input id="okay" type="submit" value="Okay" />
+      </form>
+    </div>
+
+    <div id="hint" class="panel">
+      Click <b>right mouse button</b> to edit properties.
+    </div>
+    <ul class="buttons">
+      <li>
+        <input type="button" id="js-debug1" value="#1" />
+        <input type="button" id="js-debug2" value="#2" />
+        <input type="button" id="js-debug3" value="#3" />
+        <input type="button" id="js-debug4" value="#4" />
+        <input type="button" id="js-debug5" value="#5" />
+        <input type="button" id="js-debug6" value="#6" />
+      </li>
+    </ul>
+    <div id="properties-panel-parent"></div>
+
+    <script src="src/model-extension.js"></script>
+  </body>
+</html>

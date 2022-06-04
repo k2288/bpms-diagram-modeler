@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body {
+  display: flex;
+}
+
+#container {
+  flex-grow: 1;
+}
+/* #container > div {
+  height: 100%;
+} */
+
+#container {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#canvas > div {
+  height: 100%;
+}
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#canvas > div {
+  height: 100%;
+}
+#properties-panel-parent {
+  background: #f8f8f8;
+  border-left: solid 1px #ccc;
+}
+
+/* line 89, styles/app.less */
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* line 98, styles/app.less */
+.buttons > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 102, styles/app.less */
+.buttons > li > a {
+  background: #ddd;
+  border: solid 1px #666;
+  display: inline-block;
+  padding: 5px;
+}
+/* line 110, styles/app.less */
+.buttons a {
+  opacity: 0.3;
+}
+/* line 114, styles/app.less */
+.buttons a.active {
+  opacity: 1;
+}
+
+html,
+body,
+.panel {
+  background-color: #fafafa;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  font-family: "Arial", sans-serif;
+  padding: 10px;
+}
+
+#quality-assurance {
+  color: #111;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#quality-assurance #form input {
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  font-family: "Arial", sans-serif;
+  padding: 10px;
+}
+
+#quality-assurance #form input[type="text"] {
+  width: 100%;
+}
+
+#quality-assurance #form #warning {
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 2px;
+  padding: 10px;
+}
+
+#quality-assurance #form input[type="submit"] {
+  background-color: #fafafa;
+  color: #111;
+}
+
+#hint {
+  bottom: 20px;
+  left: 20px;
+  position: absolute;
+}

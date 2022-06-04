@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      .element-properties label {
+        font-weight: bold;
+      }
+
+      .element-properties label:after {
+        content: ": ";
+      }
+
+      .element-properties button + button {
+        margin-left: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="modeler-parent"></div>
+      <div id="container"></div>
+      <div id="properties-panel-parent"></div>    
+    </div>
+    <div class ="buttons">
+      <div id="properties-container"></div>
+      <ul class="buttons1">
+        <li>
+          <input type="button" id="js-debug1" value="#1" />
+          <input type="button" id="js-debug2" value="#2" />
+          <input type="button" id="js-debug3" value="#3" />
+          <input type="button" id="js-debug4" value="#4" />
+          <input type="button" id="js-debug5" value="#5" />
+          <input type="button" id="js-debug6" value="#6" />
+        </li>
+      </ul>
+    </div>
+    <script src="src/react-property.js"></script>
+  </body>
+</html>

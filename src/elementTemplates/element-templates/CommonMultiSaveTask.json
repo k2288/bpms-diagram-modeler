@@ -1,0 +1,80 @@
+{
+  "name": "CommonMultiSaveTask",
+  "id": "com.dkunc.oasis.task.commonDbTask.CommonMultiSaveTask",
+  "appliesTo": ["bpmn:Task"],
+  "properties": [
+    {
+      "label": "Type",
+      "type": "String",
+      "value": "com.dkunc.oasis.task.commonDbTask.CommonMultiSaveTask",
+      "editable": false,
+      "binding": {
+        "name": "class",
+        "type": "camunda:property"
+      },
+      "constraints": { "notEmpty": true }
+    },
+    {
+      "label": "dao",
+      "type": "String",
+      "value": "daoMlsUI",
+      "binding": {
+        "name": "dao",
+        "type": "camunda:property"
+      },
+      "constraints": { "notEmpty": true }
+    },
+    {
+      "label": "insertSqlKey",
+      "type": "String",
+      "value": "#{serviceId}Mapper.insert",
+      "binding": { "name": "insertSqlKey", "type": "camunda:property" }
+    },
+    {
+      "label": "updateSqlKey",
+      "type": "String",
+      "value": "#{serviceId}Mapper.update",
+      "binding": { "name": "updateSqlKey", "type": "camunda:property" }
+    },
+    {
+      "label": "deleteSqlKey",
+      "type": "String",
+      "value": "#{serviceId}Mapper.delete",
+      "binding": { "name": "deleteSqlKey", "type": "camunda:property" }
+    },
+    {
+      "label": "paramKey",
+      "type": "String",
+      "value": "inputDS",
+      "binding": {
+        "name": "paramKey",
+        "type": "camunda:property"
+      },
+      "constraints": { "notEmpty": false }
+    },
+    {
+      "label": "resultKey",
+      "type": "String",
+      "value": "resultDS",
+      "binding": { "name": "resultKey", "type": "camunda:property" },
+      "constraints": { "notEmpty": true }
+    },
+    {
+      "label": "resultKey를 화면으로 전달할까요?",
+      "type": "Boolean",
+      "value": true,
+      "binding": {
+        "name": "isServiceResult",
+        "type": "camunda:property"
+      }
+    }
+  ],
+  "entriesVisible": {
+    "_all": true,
+    "asyncAfter": false,
+    "asyncBefore": false,
+    "exclusive": false,
+    "jobPriority": false,
+    "failedJobRetryTimeCycle": false
+  }
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "CommonDbTask",
+    "id": "com.dkunc.oasis.task.commonDbTask.MapperBaseDbAccessTemplate",
+    "appliesTo": ["bpmn:Task"],
+    "properties": [
+      {
+        "label": "Type",
+        "type": "Dropdown",
+        "value": "com.dkunc.oasis.task.commonDbTask.CommonSelectTask",
+        "editable": true,
+        "choices": [
+          {
+            "name": "select",
+            "value": "com.dkunc.oasis.task.commonDbTask.CommonSelectTask"
+          },
+          {
+            "name": "insert",
+            "value": "com.dkunc.oasis.task.commonDbTask.CommonInsertTask"
+          },
+          {
+            "name": "update",
+            "value": "com.dkunc.oasis.task.commonDbTask.CommonUpdateTask"
+          },
+          {
+            "name": "delete",
+            "value": "com.dkunc.oasis.task.commonDbTask.CommonDeleteTask"
+          },
+          {
+            "name": "iterative insert",
+            "value": "com.dkunc.oasis.task.commonDbTask.IterativeInsertTask"
+          }
+        ],
+        "binding": {
+          "name": "class",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "dao (null = defaultServiceDao)",
+        "type": "String",
+        "value": "",
+        "binding": {
+          "name": "dao",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "sqlKey",
+        "type": "String",
+        "value": "#{serviceId}Mapper.select",
+        "binding": {
+          "name": "sqlKey",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "paramKey",
+        "type": "String",
+        "value": "inputDS",
+        "binding": {
+          "name": "paramKey",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "resultKey",
+        "type": "String",
+        "value": "resultDS",
+        "binding": { "name": "resultKey", "type": "camunda:property" },
+        "constraints": { "notEmpty": true }
+      },
+      {
+        "label": "isServiceResult(resultKey를 화면으로 전달할까요?)",
+        "type": "Boolean",
+        "value": true,
+        "binding": {
+          "name": "isServiceResult",
+          "type": "camunda:property"
+        }
+      },
+      {
+        "label": "isResultTypeMap(조회결과를 Map으로 변환할까요?)",
+        "type": "Boolean",
+        "value": false,
+        "binding": {
+          "name": "isResultTypeMap",
+          "type": "camunda:property"
+        }
+      },
+      {
+        "label": "전처리 Spel",
+        "type": "Text",
+        "value": "",
+        "description": "전처리 Spel을 입력하세요.\n 예) ['i'] = 10",
+        "binding": {
+          "name": "beforeSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "후처리 Spel",
+        "type": "Text",
+        "value": "",
+        "description": "후처리 Spel을 입력하세요.",
+        "binding": {
+          "name": "afterSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      },
+      {
+        "label": "분기 Spel",
+        "type": "String",
+        "value": "",
+        "description": "선택된 값으로 분기 예) ['j'] <= 9? 'loop' : 'end' 또는 ['action']",
+        "binding": {
+          "name": "nextBranchSpel",
+          "type": "camunda:property"
+        },
+        "constraints": { "notEmpty": false }
+      }
+    ]
+  }
+]

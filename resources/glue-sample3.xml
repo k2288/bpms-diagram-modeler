@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Glue:GlueDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Glue="http://www.glueframework.com/activitydiagram/" id="0" location="20,20" size="100,100">
+  <child xsi:type="Glue:InitialState" id="0" location="287,32" size="-1,-1" output="//@wire.0"/>
+  <child xsi:type="Glue:FinalState" id="1" location="294,303" size="-1,-1" input="//@wire.1 //@wire.4 //@wire.9"/>
+  <child xsi:type="Glue:RouterActivity" id="2" location="90,82" size="407,-1" input="//@wire.0" output="//@wire.2 //@wire.3 //@wire.8" name="분기">
+    <property key="class" value="com.posdata.glue.biz.activity.PosDefaultRouter"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 화면의 Event에 따라서 분기하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;&#xD;&#xA;3. Reference&#xD;&#xA;"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="5" location="122,179" size="162,-1" input="//@wire.2" output="//@wire.1" name="조회">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.form.FormSearch"/>
+    <property key="dao" value="mesdao"/>
+    <property key="sqlkey" value="M472020010pop06_Grid_1.select"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml화면으로 부터 Form의 조건을 받아서 Grid에 필요한 정보를 조회하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;Form의 부적합이력정보를 조회한다.&#xD;&#xA;관련 Table :TB_M47_COIL_DEF_HST&#xD;&#xA;관련 항목 :주문번호&#xD;&#xA;주문행번&#xD;&#xA;MO번호&#xD;&#xA;제품군&#xD;&#xA;주문환산두께&#xD;&#xA;주문환산폭&#xD;&#xA;주문환산길이&#xD;&#xA;긴급주문&#xD;&#xA;MaterialCode&#xD;&#xA;ClassCode&#xD;&#xA;유통경로(내수구분)&#xD;&#xA;주문고객사&#xD;&#xA;수요가&#xD;&#xA;"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="206140" location="422,176" size="179,-1" input="//@wire.3 //@wire.7" output="//@wire.4 //@wire.5" name="Grid내의 값을 ctx로 추출">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47DhtmlGridColumnChange"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Grid의 Column명을 변환하여 ctx에 저장하는 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;화면의 Grid의 컬럼내 정보는 xml-result_1_DEF_CD 의 형식으로 key가 저장된다.&#xD;&#xA;이를 DEF_CD Key형식으로 변환하여 저장한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="206141" location="419,303" size="179,-1" input="//@wire.6" output="//@wire.7" name="코일_부적합이력 저장">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47FormSave"/>
+    <property key="dao" value="mesdao"/>
+    <property key="insert-sql" value="M472020010pop06_Grid_1.insert"/>
+    <property key="isAudit" value="true"/>
+    <property key="select-sql" value="M47TableC_TB_M47_COIL_DEF_HST.count"/>
+    <property key="update-sql" value="M472020010pop06_Grid_1.update"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 Dhtml Grid의 추가된 행정보를 Insert하는 공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;코일_부적합이력(TB_M47_COIL_DEF_HST) 정보 변경 (선택된 코일)&#xD;&#xA;관련 Table :TB_M47_COIL_DEF_HST&#xD;&#xA;&#xD;&#xA;관련항목 :&#xD;&#xA;부적합발생위치구분&#xD;&#xA;부적합코드&#xD;&#xA;부적합원인코드&#xD;&#xA;부적합원인발생위치&#xD;&#xA;부적합매수&#xD;&#xA;코일중량&#xD;&#xA;사후처리코드&#xD;&#xA;부적합상세형태&#xD;&#xA;기타특기사항&#xD;&#xA;"/>
+  </child>
+  <child xsi:type="Glue:Activity" id="224851" location="421,243" size="179,-1" input="//@wire.5" output="//@wire.6" name="제품실적공통조회항목변경">
+    <property key="class" value="com.unionsteel.mes.m47.activity.common.M47SeachToCtxActivity"/>
+    <property key="dao" value="mesdao"/>
+    <property key="new-transaction" value="false"/>
+    <property key="resultkey" value="RK_CONVERT"/>
+    <property key="sqlkey" value="M472020010pop06_Grid_1.select_convert"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity는 sqlkey로 지정된 sql을 읽어 항목을 변경하는  공통 Activity이다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;L2 수신항목중 특정항목의 format을 변경하여 처리한다.&#xD;&#xA;&#xD;&#xA;3. Reference"/>
+  </child>
+  <child xsi:type="Glue:DinaActivity" id="224863" location="733,175" size="155,-1" input="//@wire.8" output="//@wire.9" name="삭제">
+    <property key="class" value="com.poscoict.glue.biz.dhtmlx.grid.GridDelete"/>
+    <property key="(resultkey)" value="value"/>
+    <property key="dao" value="mesdao"/>
+    <property key="isAudit" value="true"/>
+    <property key="sqlkey" value="M47TableD_TB_M47_COIL_DEF_HST.delete"/>
+    <property key="description" value="1. Activity Definition&#xD;&#xA;이 Activity 는 Grid에서 수정한  부적합이력정보를 삭제한다.&#xD;&#xA;&#xD;&#xA;2. Detail Description&#xD;&#xA;부적합이력정보를 삭제 처리한다.&#xD;&#xA;관련 테이블 : TB_M47_COIL_DEF_HST&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+  </child>
+  <property key="tx1" value="true"/>
+  <property key="description" value="sheet부적합이력정보를 관리한다."/>
+  <wire id="0" guardcondition="success" firstRelativePoint="269,50" lastRelativePoint="269,82"/>
+  <wire id="2" guardcondition="success" firstRelativePoint="195,209" lastRelativePoint="293,312">
+    <bendpoint weight="0.5" firstDimension="-8,118" secondDimension="-109,-1"/>
+  </wire>
+  <wire id="6" guardcondition="find" firstRelativePoint="194,112" lastRelativePoint="194,179"/>
+  <wire id="10401" guardcondition="save" firstRelativePoint="494,206" lastRelativePoint="494,327"/>
+  <wire id="10405" guardcondition="end" firstRelativePoint="422,193" lastRelativePoint="305,302">
+    <bendpoint weight="0.5" firstDimension="-175,2" secondDimension="32,-120"/>
+  </wire>
+  <wire id="10711" guardcondition="success" firstRelativePoint="504,206" lastRelativePoint="504,243"/>
+  <wire id="10712" guardcondition="success" firstRelativePoint="509,273" lastRelativePoint="509,303"/>
+  <wire id="10713" guardcondition="success" firstRelativePoint="597,314" lastRelativePoint="601,189">
+    <bendpoint weight="0.5" firstDimension="160,-4" secondDimension="157,123"/>
+    <bendpoint weight="0.5" firstDimension="161,-129" secondDimension="158,-2"/>
+  </wire>
+  <wire id="10714" guardcondition="delete" firstRelativePoint="815,205" lastRelativePoint="303,323">
+    <bendpoint weight="0.5" firstDimension="523,9" secondDimension="6,-84"/>
+  </wire>
+  <wire id="10715" guardcondition="success" firstRelativePoint="815,205" lastRelativePoint="303,323">
+    <bendpoint weight="0.5" firstDimension="5,264" secondDimension="511,141"/>
+    <bendpoint weight="0.5" firstDimension="-507,265" secondDimension="-1,142"/>
+  </wire>
+</Glue:GlueDiagram>
