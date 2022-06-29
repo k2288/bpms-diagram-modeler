@@ -8,6 +8,8 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^0.27.2",
     "bpmn-font": "0.10.0",
     "bpmn-js": "7.4.1",
     "bpmn-js-embedded-comments": "0.6.1",
@@ -16,9 +18,13 @@
     "diagram-js": "7.0.0",
     "diagram-js-minimap": "2.0.4",
     "jQuery": "1.7.4",
+    "location": "^0.0.1",
+    "navigator": "^1.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "xml2js": "0.4.23"
+    "react-router-dom": "^6.3.0",
+    "xml2js": "0.4.23",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",

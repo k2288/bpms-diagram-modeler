@@ -21,7 +21,12 @@ import glueXml2 from "../resources/glue-sample2.xml";
 import glueXml3 from "../resources/glue-sample3.xml";
 import glue2bpmn from "./glue/Glue2Bpmn";
 import xelementTemplates from "./elementTemplates/elementTemplatesImport";
+import axios from "axios";
 var container = $("#container");
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get('token');
+const process_key = urlParams.get('process_key');
+
 const modeler = new Modeler({
   container,
   propertiesPanel: {
@@ -84,7 +89,15 @@ function createNewDiagram() {
 
 async function openDiagram(xml) {
   try {
-    await modeler.importXML(xml);
+
+    // console.log(myParam);
+    // let token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTAwMFwvYXBpXC9sb2dpblwvZW1haWxcL3Bhc3N3b3JkIiwiaWF0IjoxNjUzOTIwMTkwLCJuYmYiOjE2NTM5MjAxOTAsImp0aSI6IlFqajNkdUo2b1ZJYmsxaDQiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJ1c2VyVHlwZSI6bnVsbH0.oj9nE5De7Ao6y8kIVy5PXKb-voWxHZ_Mv48IT5IpKVc"
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    let xmlResponse= await axios.get(
+      `http://localhost:10000/api/process-definition/${process_key}/xml`,
+    )
+
+    await modeler.importXML(xmlResponse.data);
     getModelVariables();
     canvas.zoom("fit-viewport");
     onEventHandler();
@@ -154,18 +167,32 @@ $(function () {
   $(document).on("click", "#js-debug4", doDebugFunction4);
   $(document).on("click", "#js-debug5", doDebugFunction5);
   $(document).on("click", "#js-debug6", doDebugFunction6);
-  function setEncoded(link, name, data) {
-    var encodedData = encodeURIComponent(data);
 
-    if (data) {
-      link.addClass("active").attr({
-        href: "data:application/bpmn20-xml;charset=UTF-8," + encodedData,
-        download: name
-      });
-    } else {
-      link.removeClass("active");
-    }
-  }
+  $("#js-download-diagram").click(async()=>{
+    const { xml } = await modeler.saveXML({ format: true });
+    let encodedData = encodeURIComponent(xml);
+    let formData=new FormData();
+
+    formData.append('file',new File([new Blob([xml])],"digram.bpmn"))
+
+    axios.post(`http://localhost:10000/api/process-definition/${process_key}/xml`,formData)
+    .then(resp=>{
+      console.log(resp.data)
+    })
+  });
+
+  // function setEncoded(link, name, data) {
+  //   var encodedData = encodeURIComponent(data);
+
+  //   if (data) {
+  //     link.addClass("active").attr({
+  //       href: "data:application/bpmn20-xml;charset=UTF-8," + encodedData,
+  //       download: name
+  //     });
+  //   } else {
+  //     link.removeClass("active");
+  //   }
+  // }
 
   var exportArtifacts = debounce(async function () {
     try {
@@ -176,13 +203,13 @@ $(function () {
       setEncoded(downloadSvgLink, "diagram.svg", null);
     }
 
-    try {
-      const { xml } = await modeler.saveXML({ format: true });
-      setEncoded(downloadLink, "diagram.bpmn", xml);
-    } catch (err) {
-      console.error("Error happened saving diagram: ", err);
-      setEncoded(downloadLink, "diagram.bpmn", null);
-    }
+    // try {
+    //   const { xml } = await modeler.saveXML({ format: true });
+    //   setEncoded(downloadLink, "diagram.bpmn", xml);
+    // } catch (err) {
+    //   console.error("Error happened saving diagram: ", err);
+    //   setEncoded(downloadLink, "diagram.bpmn", null);
+    // }
   }, 500);
 
   modeler.on("commandStack.changed", exportArtifacts);

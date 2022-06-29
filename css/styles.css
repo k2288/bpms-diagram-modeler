@@ -57,6 +57,7 @@ body {
   height: 100%;
 }
 #properties-panel-parent {
+  overflow: auto;
   background: #f8f8f8;
   border-left: solid 1px #ccc;
 }
